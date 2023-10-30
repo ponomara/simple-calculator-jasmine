@@ -128,4 +128,6 @@ describe('Calculator.js', function () {
             calculator.divide(0);
         }).toThrowError(BadRequestError, 'number cannot be 0');
     });
+
+    //TODO; keep on watching : https://www.youtube.com/watch?v=ZVtVfoqO0FE&list=PL_euSNU_eLbcpJdoM-WWzUlNNVM4TwtMl&index=25
 });
