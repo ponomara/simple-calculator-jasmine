@@ -126,8 +126,23 @@ describe('Calculator.js', function () {
         }).toThrowError('number cannot be 0');
         expect(function () {
             calculator.divide(0);
-        }).toThrowError(BadRequestError, 'number cannot be 0');
+        //}).toThrowError(BadRequestError, 'number cannot be 0'); // false with BadRequestError
+        //}).toThrowError(Error, 'number cannot be 0'); // true with Error
+        }).toThrowError(ArithmeticError, 'number cannot be 0');
     });
 
     //TODO; keep on watching : https://www.youtube.com/watch?v=ZVtVfoqO0FE&list=PL_euSNU_eLbcpJdoM-WWzUlNNVM4TwtMl&index=25
+
+    //toMatch Matcher
+    it('should return total a number', function (){
+        const calculator = new Calculator();
+        calculator.total= 10;
+        expect(calculator.add(10)).toBe(20);
+        expect(calculator.total).toMatch(/-?\d+/);
+        // expect(calculator.total).toMatch(/-?[a-z]+/);
+        expect(typeof calculator.total).toMatch('umber');
+        expect(typeof calculator.total).toMatch('num');
+        expect(typeof calculator.total).toMatch('ber');
+    });
+
 });
