@@ -157,12 +157,17 @@ describe('Calculator.js', function () {
 
     // any Matcher
     it ('should be an instance ', function (){
+        jasmine.addMatchers(CustomMatcher);
         const calculator = new Calculator();
         calculator.total = 10;
         expect(calculator).toEqual(jasmine.any(Object));
         expect(calculator).toEqual(jasmine.any(Calculator));
         expect(calculator.total).toEqual(jasmine.any(Number));
         // expect(calculator.total).toEqual(jasmine.any(String)); // false, fails
+        expect(calculator).toBeCalculator();
+        // expect(calculator.total).toBeCalculator();//false, fails
+        expect(calculator.total).not.toBeCalculator();
+        expect(calculator).not.toBeCalculator(); //TODO: fails, comment out
     });
 
     //objectContaining
@@ -175,4 +180,7 @@ describe('Calculator.js', function () {
         }));
         expect(typeof calculator.total).toEqual(jasmine.stringContaining('umber'));
     });
+
+    // custom Matcher
+
 });
