@@ -12,6 +12,11 @@ describe('main.js', function () {
 
     describe('updateResult()', function () {
 
+        afterAll(function () {
+            const element = document.getElementById('result');
+            document.body.removeChild(element);
+        });
+
         it('add result to the DOM element', function () {
             const element = document.createElement('div');
             element.setAttribute('id', 'result');
