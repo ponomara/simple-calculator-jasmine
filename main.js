@@ -32,6 +32,8 @@ function calculate(event) {
         case '/':
             result = calculator.divide(numberB);
             break;
+        default:
+            result = 'Operation not recognized';
     }
 
     updateResult(result);
@@ -46,4 +48,5 @@ function updateResult(result) {
     }
 }
 
-document.getElementById('inputValue').addEventListener('change', calculate);
+document.getElementById('inputValue') &&
+    document.getElementById('inputValue').addEventListener('change', calculate);
