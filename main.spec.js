@@ -29,7 +29,17 @@ describe('main.js', function () {
         });
 
 
-        it('Calls  add');
+        it('Calls  add', function () {
+            spyOn(Calculator.prototype, 'add');
+            calculate('3+2');
+
+            // TODO: expectations
+            expect(Calculator.prototype.add).toHaveBeenCalled();
+            expect(Calculator.prototype.add).toHaveBeenCalledTimes(2);
+            expect(Calculator.prototype.add).toHaveBeenCalledWith(3);
+            expect(Calculator.prototype.add).toHaveBeenCalledWith(2);
+
+        });
         it('Calls  subtracts');
         it('Calls  multiple');
         it('Calls  divide');
