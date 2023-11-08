@@ -10,9 +10,9 @@ describe('main.js', function () {
         it('Calls  updateResult');
     });
 
-    describe('updateResult()', function () {
+    describe('updateResult()', () => {
 
-        beforeAll(function () {
+        beforeAll( () => {
             const element = document.createElement('div');
             element.setAttribute('id', 'result');
             document.body.appendChild(element);
