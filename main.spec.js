@@ -7,6 +7,7 @@ describe('main.js', function () {
             calculate('a+3');
             expect(window.updateResult).toHaveBeenCalled();
             expect(window.updateResult).toHaveBeenCalledWith('Expression not recognized');
+            expect(window.updateResult).toHaveBeenCalledTimes(1);
         });
 
         it('validate expression, if second number is invalid', function () {
@@ -15,6 +16,7 @@ describe('main.js', function () {
             calculate('3+a');
             expect(window.updateResult).toHaveBeenCalled();
             expect(window.updateResult).toHaveBeenCalledWith('Expression not recognized');
+            expect(window.updateResult).toHaveBeenCalledTimes(1);
         });
 
         it('validate expression, if operation is invalid', function () {
@@ -23,6 +25,7 @@ describe('main.js', function () {
             calculate('3_3');
             expect(window.updateResult).toHaveBeenCalled();
             expect(window.updateResult).toHaveBeenCalledWith('Expression not recognized');
+            expect(window.updateResult).toHaveBeenCalledTimes(1);
         });
 
 
