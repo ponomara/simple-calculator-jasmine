@@ -12,20 +12,22 @@ describe('main.js', function () {
 
     describe('updateResult()', () => {
 
+        let element;
+
         beforeAll( () => {
-            const element = document.createElement('div');
+            element = document.createElement('div');
             element.setAttribute('id', 'result');
             document.body.appendChild(element);
-            this.element = element;
+            // this.element = element;
         });
 
         afterAll(function () {
-            document.body.removeChild(this.element);
+            document.body.removeChild(element);
         });
 
         it('add result to the DOM element', function () {
             updateResult("5");
-            expect(this.element.innerText).toBe("5");
+            expect(element.innerText).toBe("5");
         });
     });
 
