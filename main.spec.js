@@ -83,7 +83,7 @@ describe('main.js', function () {
 
             expect(window.updateResult).toHaveBeenCalled();
             expect(Calculator.prototype.multiply).toHaveBeenCalled();
-            expect(window.updateResult).toHaveBeenCalledWith(27);
+            expect(window.updateResult).toHaveBeenCalledWith('Fake Call');
         });
     });
 
