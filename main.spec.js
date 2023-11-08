@@ -21,11 +21,11 @@ describe('main.js', function () {
             // this.element = element;
         });
 
-        afterAll(function () {
+        afterAll(() => {
             document.body.removeChild(element);
         });
 
-        it('add result to the DOM element', function () {
+        it('add result to the DOM element', () => {
             updateResult("5");
             expect(element.innerText).toBe("5");
         });
