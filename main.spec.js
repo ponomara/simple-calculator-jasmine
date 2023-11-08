@@ -3,23 +3,26 @@ describe('main.js', function () {
     describe('main()', function () {
         it('validate expression, if first number is invalid', function () {
             // spy on updateResult() method
-            spyOn(window,'updateResult').and.stub();
+            spyOn(window,'updateResult');// .and.stub(); is the default and can be omitted
             calculate('a+3');
             expect(window.updateResult).toHaveBeenCalled();
+            expect(window.updateResult).toHaveBeenCalledWith('Expression not recognized');
         });
 
         it('validate expression, if second number is invalid', function () {
             // spy on updateResult() method
-            spyOn(window,'updateResult').and.stub();
+            spyOn(window,'updateResult');// .and.stub(); is the default and can be omitted
             calculate('3+a');
             expect(window.updateResult).toHaveBeenCalled();
+            expect(window.updateResult).toHaveBeenCalledWith('Expression not recognized');
         });
 
         it('validate expression, if operation is invalid', function () {
             // spy on updateResult() method
-            spyOn(window,'updateResult').and.stub();
+            spyOn(window,'updateResult');// .and.stub(); is the default and can be omitted
             calculate('3_3');
             expect(window.updateResult).toHaveBeenCalled();
+            expect(window.updateResult).toHaveBeenCalledWith('Expression not recognized');
         });
 
 
