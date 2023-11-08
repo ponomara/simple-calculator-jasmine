@@ -101,7 +101,7 @@ describe('main.js', function () {
 
             expect(window.updateResult).toHaveBeenCalled();
             expect(Calculator.prototype.add).toHaveBeenCalled();
-            expect(window.updateResult).toHaveBeenCalledWith('returns a value');
+            expect(window.updateResult).toHaveBeenCalledWith('second call');
         });
     });
 
