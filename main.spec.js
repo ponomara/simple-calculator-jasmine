@@ -85,6 +85,15 @@ describe('main.js', function () {
             expect(Calculator.prototype.multiply).toHaveBeenCalled();
             expect(window.updateResult).toHaveBeenCalledWith('Fake Call');
         });
+        it('Calls  updateResult (example for returnValue)', function () {
+            spyOn(window, 'updateResult');
+            spyOn(Calculator.prototype, 'multiply').and.returnValue('returns a value');
+            calculate('3*9');
+
+            expect(window.updateResult).toHaveBeenCalled();
+            expect(Calculator.prototype.multiply).toHaveBeenCalled();
+            expect(window.updateResult).toHaveBeenCalledWith('Fake Call');
+        });
     });
 
     describe('updateResult()', function () {
