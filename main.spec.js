@@ -10,24 +10,22 @@ describe('main.js', function () {
         it('Calls  updateResult');
     });
 
-    describe('updateResult()', () => {
+    describe('updateResult()', function () {
 
-        let element;
-
-        beforeAll( () => {
-            element = document.createElement('div');
+        beforeAll(function () {
+            const element = document.createElement('div');
             element.setAttribute('id', 'result');
             document.body.appendChild(element);
-            // this.element = element;
+            this.element = element;
         });
 
-        afterAll(() => {
-            document.body.removeChild(element);
+        afterAll(function () {
+            document.body.removeChild(this.element);
         });
 
-        it('add result to the DOM element', () => {
+        it('add result to the DOM element', function () {
             updateResult("5");
-            expect(element.innerText).toBe("5");
+            expect(this.element.innerText).toBe("5");
         });
     });
 
