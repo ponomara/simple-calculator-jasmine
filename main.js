@@ -10,7 +10,7 @@ function calculate(event) {
 
     const operation = inputValue.match(expression);
     if (isNaN(numberA) || isNaN(numberB) || operation === null) {
-        updateResult("Operation not recognized");
+        updateResult("Expression not recognized");
         return;
     }
     const operator = operation[0];

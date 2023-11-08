@@ -1,7 +1,14 @@
 describe('main.js', function () {
 
     describe('main()', function () {
-        it('validate expression');
+        it('validate expression, if the number is invalid', function () {
+            // spy on updateResult() method
+            spyOn(window,'updateResult').and.stub();
+            calculate('a+3');
+
+            // expect(calculate('a+3')).toBe(5);
+
+        });
         it('Calls  add');
         it('Calls  subtracts');
         it('Calls  multiple');
