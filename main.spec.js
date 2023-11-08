@@ -39,11 +39,33 @@ describe('main.js', function () {
             expect(spy).toHaveBeenCalledWith(2);
 
         });
-        it('Calls  subtracts');
-        it('Calls  multiple');
-        it('Calls  divide');
-        it('Validate operation');
-        it('Calls  updateResult');
+        it('Calls  subtracts', function () {
+            const spy = spyOn(Calculator.prototype, 'subtract');
+            calculate('3-2');
+            expect(spy).toHaveBeenCalled();
+            expect(spy).toHaveBeenCalledWith(2);
+            expect(spy).not.toHaveBeenCalledWith(3);
+            expect(spy).toHaveBeenCalledTimes(1);
+
+        });
+        it('Calls  multiple', function () {
+            const spy = spyOn(Calculator.prototype, 'multiply');
+            calculate('4*5');
+            expect(spy).toHaveBeenCalled();
+            expect(spy).toHaveBeenCalledWith(5);
+            expect(spy).not.toHaveBeenCalledWith(4);
+            expect(spy).toHaveBeenCalledTimes(1);
+        });
+        it('Calls  divide', function () {
+            const spy = spyOn(Calculator.prototype, 'divide');
+            calculate('6/3');
+            expect(spy).toHaveBeenCalled();
+            expect(spy).toHaveBeenCalledWith(3);
+            expect(spy).not.toHaveBeenCalledWith(6);
+            expect(spy).toHaveBeenCalledTimes(1);
+        });
+        xit('Validate operation');
+        xit('Calls  updateResult');
     });
 
     describe('updateResult()', function () {
