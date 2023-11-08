@@ -66,10 +66,12 @@ describe('main.js', function () {
         });
         it('Calls  updateResult', function () {
             spyOn(window, 'updateResult');
+            spyOn(Calculator.prototype, 'multiply').and.callThrough();
             calculate('3*9');
 
             expect(window.updateResult).toHaveBeenCalled();
-            expect(window.updateResult).toHaveBeenCalledWith(9);
+            expect(Calculator.prototype.multiply).toHaveBeenCalled();
+            expect(window.updateResult).toHaveBeenCalledWith(27);
         });
     });
 

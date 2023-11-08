@@ -26,7 +26,6 @@ Calculator.prototype.subtract  = function (number) {
 }
 
 Calculator.prototype.multiply  = function (number) {
-    debugger;
     return (this.total *= number);
 }
 
