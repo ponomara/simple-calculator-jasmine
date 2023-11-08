@@ -1,14 +1,28 @@
 describe('main.js', function () {
 
     describe('main()', function () {
-        it('validate expression, if the number is invalid', function () {
+        it('validate expression, if first number is invalid', function () {
             // spy on updateResult() method
             spyOn(window,'updateResult').and.stub();
             calculate('a+3');
-
-            // expect(calculate('a+3')).toBe(5);
-
+            expect(window.updateResult).toHaveBeenCalled();
         });
+
+        it('validate expression, if second number is invalid', function () {
+            // spy on updateResult() method
+            spyOn(window,'updateResult').and.stub();
+            calculate('3+a');
+            expect(window.updateResult).toHaveBeenCalled();
+        });
+
+        it('validate expression, if operation is invalid', function () {
+            // spy on updateResult() method
+            spyOn(window,'updateResult').and.stub();
+            calculate('3_3');
+            expect(window.updateResult).toHaveBeenCalled();
+        });
+
+
         it('Calls  add');
         it('Calls  subtracts');
         it('Calls  multiple');
