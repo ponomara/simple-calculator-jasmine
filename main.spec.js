@@ -64,9 +64,21 @@ describe('main.js', function () {
             expect(spy).not.toHaveBeenCalledWith(6);
             expect(spy).toHaveBeenCalledTimes(1);
         });
-        it('Calls  updateResult', function () {
+
+        it('Calls  updateResult (example for callThrough)', function () {
             spyOn(window, 'updateResult');
             spyOn(Calculator.prototype, 'multiply').and.callThrough();
+            calculate('3*9');
+
+            expect(window.updateResult).toHaveBeenCalled();
+            expect(Calculator.prototype.multiply).toHaveBeenCalled();
+            expect(window.updateResult).toHaveBeenCalledWith(27);
+        });
+        it('Calls  updateResult (example for callFake)', function () {
+            spyOn(window, 'updateResult');
+            spyOn(Calculator.prototype, 'multiply').and.callFake(function () {
+                return 'Fake Call';
+            });
             calculate('3*9');
 
             expect(window.updateResult).toHaveBeenCalled();
