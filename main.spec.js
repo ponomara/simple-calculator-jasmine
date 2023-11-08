@@ -64,8 +64,13 @@ describe('main.js', function () {
             expect(spy).not.toHaveBeenCalledWith(6);
             expect(spy).toHaveBeenCalledTimes(1);
         });
-        xit('Validate operation');
-        xit('Calls  updateResult');
+        it('Calls  updateResult', function () {
+            spyOn(window, 'updateResult');
+            calculate('3*9');
+
+            expect(window.updateResult).toHaveBeenCalled();
+            expect(window.updateResult).toHaveBeenCalledWith(9);
+        });
     });
 
     describe('updateResult()', function () {
