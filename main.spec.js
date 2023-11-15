@@ -135,8 +135,9 @@ describe('main.js', function () {
            spyOn(document, 'getElementById').and.returnValue({
                innerText: null
            });
+           spyOnProperty(Calculator.prototype, 'version', 'get');
            showVersion();
-
+           expect(Object.getOwnPropertyDescriptor(Calculator.prototype, 'version').get).toHaveBeenCalled();
        }) ;
     });
 
