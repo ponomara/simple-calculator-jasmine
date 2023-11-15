@@ -190,5 +190,13 @@ describe('Calculator.js', function () { //<-- Suite
             });
         });
 
+        describe('get Version', function () {
+            it ('fetches version from external source', function (done) {
+                calculator.version.then(function (version) {
+                   expect(version).toBe('0.2');
+                   done(); // done callback waits for the Promise to resolve
+                });
+            });
+        });
     });
 });
