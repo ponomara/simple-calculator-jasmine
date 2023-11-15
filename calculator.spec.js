@@ -191,12 +191,10 @@ describe('Calculator.js', function () { //<-- Suite
         });
 
         describe('get Version', function () {
-            it ('fetches version from external source', function (done) {
+            it('fetches version from external source', async function () {
                 spyOn(window, 'fetch').and.returnValue(Promise.resolve(new Response('{"version":"0.2"}')));
-                calculator.version.then(function (version) {
-                   expect(version).toBe('0.2');
-                   done(); // done callback waits for the Promise to resolve
-                });
+                const version = await calculator.version;
+                expect(version).toBe('0.2');
             });
         });
     });
