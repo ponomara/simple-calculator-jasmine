@@ -50,6 +50,8 @@ function updateResult(result) {
 function showVersion() {
     const calculator = new Calculator();
     const element = document.getElementById('version');
+    debugger;
+
     if (element) {
         element.innerText = calculator.version;
     }
