@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Simple Calculator</title>
+    <script>
+        window.onload = function () {
+            showVersion();
+        }
+    </script>
 </head>
 <body>
     <h2>Simple Calculator</h2>
@@ -12,7 +17,8 @@
         </label>
     </div>
     <div><span>Result:</span> <span id="result"></span></div>
-    
+
+    <div style="text-align: center">Version: <span id="version"></span></div>
     <script type="text/javascript" src="calculator.js"></script>
     <script type="text/javascript" src="main.js"></script>
 </body>
